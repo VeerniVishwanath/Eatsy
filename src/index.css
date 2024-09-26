@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+
+  --background-color: #fff3e0;
+  --buttons: #e53935;
+  --text: #424242;
+  --highlights: #ff7043;
+  --banners: #ffeb3b;
+  box-sizing: border-box;
+}
