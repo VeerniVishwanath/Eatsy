@@ -3,7 +3,7 @@ import ShowcaseCard from "../components/ShowcaseCard/ShowcaseCard";
 
 export default function Section1() {
   return (
-    <div className="flex flex-col lg:flex-row gap-20 lg:gap-4 mt-20 ">
+    <section className="flex flex-col lg:flex-row gap-20 lg:gap-4 pt-32 ">
       {/* Left Container */}
       <div className="flex flex-col gap-5 w-full lg:w-[50%]">
         <div className="flex items-center gap-2 font-bold rounded-full w-fit p-4 pt-2 pb-2 bg-[#f7efa5] text-[var(--highlights)]">
@@ -29,7 +29,7 @@ export default function Section1() {
         {/* Button */}
         <button
           type="button"
-          className="bg-[var(--buttons)] p-3 pl-4 pr-4 ml-2 rounded-xl w-fit text-[var(--text)] font-semibold"
+          className="bg-[var(--buttons)] p-3 pl-4 pr-4 ml-2 rounded-xl w-fit text-gray-200 font-semibold"
         >
           Order Now
         </button>
@@ -44,6 +44,6 @@ export default function Section1() {
         />
         <ShowcaseCard />
       </div>
-    </div>
+    </section>
   );
 }
