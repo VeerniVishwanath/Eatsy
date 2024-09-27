@@ -17,9 +17,12 @@ export default function Section3() {
 
   return (
     <section className="pt-32">
+      {/* Heading */}
       <h2 className="text-2xl font-semibold">Our Hot Dishes</h2>
       <hr className="border-[2.5px] border-orange-500 rounded-sm w-24 mt-2" />
+
       <div className="grid justify-items-center">
+        {/* Carousel */}
         <div className="flex overflow-auto gap-14 mt-8 p-4">
           {data.map((curr) => {
             return (
@@ -32,6 +35,7 @@ export default function Section3() {
             );
           })}
         </div>
+        {/* Menu */}
         <div className="flex flex-wrap justify-center gap-8 mt-20 ">
           {menuItems[1].map((item) => (
             <div key={item.name} className="flex justify-center">
