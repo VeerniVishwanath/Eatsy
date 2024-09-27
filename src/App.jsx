@@ -4,6 +4,7 @@ import { getDatabase, onValue, ref } from "firebase/database";
 import Section1 from "./sections/Section1";
 import { DataContext } from "./lib/Contexts";
 import Section2 from "./sections/Section2";
+import Section3 from "./sections/Section3";
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -30,6 +31,7 @@ export default function App() {
       <DataContext.Provider value={data}>
         <Section1 />
         <Section2 />
+        <Section3 />
       </DataContext.Provider>
     </div>
   );

@@ -10,10 +10,12 @@ export default function ItemCard({ item }) {
         alt={item.name}
         className="absolute w-32 lg:w-40  top-[-1rem] transition-transform hover:scale-110  "
       />
-      <div className="flex flex-col items-center justify-between h-36  lg:h-40  ml-auto text-right pr-4">
+      <div className="flex flex-col items-end justify-between h-36 lg:h-44  ml-auto text-right pr-4">
         <AddToCart />
-        <div>
-          <p className="text-xl font-semibold text-gray-700">{item.name}</p>
+        <div className="">
+          <p className="text-lg lg:text-xl font-semibold text-gray-700">
+            {item.name}
+          </p>
           <p className="text-sm font-medium text-gray-500">
             {item.calories} Kcal
           </p>
