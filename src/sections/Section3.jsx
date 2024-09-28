@@ -23,7 +23,7 @@ export default function Section3() {
 
       <div className="grid justify-items-center">
         {/* Carousel */}
-        <div className="flex overflow-auto gap-14 mt-8 p-4">
+        <div className="flex w-full justify-center overflow-x-auto no-scrollbar gap-14 mt-8 p-4">
           {data.map((curr) => {
             return (
               <MenuCard
@@ -54,7 +54,7 @@ function MenuCard({ item, category, handleCategory }) {
     <div
       className={`min-w-24 h-32 ${
         selected ? "bg-red-500 text-white" : "bg-gray-50 text-gray-700"
-      }  rounded-xl flex flex-col py-4 justify-around items-center shadow-lg`}
+      }  rounded-xl hover:cursor-pointer transition-all hover:scale-110 flex flex-col py-4 justify-around items-center shadow-lg`}
       onClick={() => handleCategory(item)}
     >
       <img

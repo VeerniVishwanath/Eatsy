@@ -17,7 +17,6 @@ function Card({ category }) {
   if (!data) {
     return <div>Loading...</div>;
   }
-  console.log(data, data[0][1][0]["imagePath"]);
   const item = data[category][1][3];
   return (
     <div className="flex flex-col gap-3 items-center rounded-xl p-4 bg-[#ffffff77] backdrop-blur-sm shadow-md font-semibold">

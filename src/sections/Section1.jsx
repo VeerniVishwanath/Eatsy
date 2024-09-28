@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShowcaseCard from "../components/ShowcaseCard/ShowcaseCard";
+import { CartContext } from "../lib/Contexts";
 
 export default function Section1() {
   return (
@@ -35,7 +36,7 @@ export default function Section1() {
         </button>
       </div>
       {/* Right Container */}
-      <div className="w-full lg:w-[50%] relative flex items-center">
+      <div className="w-full lg:w-[50%] relative flex items-center z-[-1]">
         {/* Background Image */}
         <img
           src="/bg.png"

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import config from "../configuration";
 import { getDatabase, onValue, ref } from "firebase/database";
+import { CartContext, DataContext } from "./lib/Contexts";
+import NavBar from "./sections/NavBar.jsx";
 import Section1 from "./sections/Section1";
-import { DataContext } from "./lib/Contexts";
 import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
 
@@ -28,11 +29,41 @@ export default function App() {
 
   return (
     <div className="p-4 md:px-16">
-      <DataContext.Provider value={data}>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-      </DataContext.Provider>
+      <CartProvider>
+        <DataContext.Provider value={data}>
+          <NavBar />
+          <Section1 />
+          <Section2 />
+          <Section3 />
+        </DataContext.Provider>
+      </CartProvider>
     </div>
+  );
+}
+
+function CartProvider({ children }) {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems((prev) => {
+      const prevArr = prev.filter((curr) => curr.name !== item.name);
+      return [...prevArr, item];
+    });
+  };
+
+  const removeFromCart = (itemName) => {
+    setCartItems(cartItems.filter((curr) => curr.name !== itemName));
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+    >
+      {children}
+    </CartContext.Provider>
   );
 }

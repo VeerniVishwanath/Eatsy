@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import AddToCart from "../AddToCart/AddToCart";
 
 export default function ItemCard({ item }) {
   return (
@@ -11,7 +12,7 @@ export default function ItemCard({ item }) {
         className="absolute w-32 lg:w-40  top-[-1rem] transition-transform hover:scale-110  "
       />
       <div className="flex flex-col items-end justify-between h-36 lg:h-44  ml-auto text-right pr-4">
-        <AddToCart />
+        <AddToCart item={item} />
         <div className="">
           <p className="text-lg lg:text-xl font-semibold text-gray-700">
             {item.name}
@@ -25,42 +26,6 @@ export default function ItemCard({ item }) {
           </p>
         </div>
       </div>
-    </div>
-  );
-}
-
-function AddToCart() {
-  const [count, setCount] = useState(0);
-  const handleButtonClick = (e) => {
-    const op = e ? e.target.innerText : "+";
-    setCount((prev) => eval(`${prev} ${op} 1`));
-  };
-  return (
-    <div className="border-[1px]  border-gray-300 w-20 text-center py-1 rounded-lg font-bold shadow-sm bg-[var(--buttons)] text-gray-100  hover:scale-105 transition-transform">
-      {count === 0 ? (
-        <div
-          className=" w-full hover:cursor-pointer "
-          onClick={() => handleButtonClick()}
-        >
-          ADD
-        </div>
-      ) : (
-        <div className="flex w-full  ">
-          <div
-            className="flex-1  hover:cursor-pointer"
-            onClick={handleButtonClick}
-          >
-            -
-          </div>
-          <div className="flex-1  border-x-2 hover:cursor-default">{count}</div>
-          <div
-            className="flex-1  hover:cursor-pointer"
-            onClick={handleButtonClick}
-          >
-            +
-          </div>
-        </div>
-      )}
     </div>
   );
 }

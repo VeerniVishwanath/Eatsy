@@ -18,7 +18,7 @@ export default function Section2() {
         Our Fresh & Healthy Fruits{" "}
         <hr className="border-[2.5px] rounded-xl mt-2 border-orange-500 w-36" />
       </h2>
-      <div className="flex gap-24 py-20 overflow-x-auto snap-x snap-mandatory cursor-grab ">
+      <div className="flex gap-24 py-20 overflow-x-auto no-scrollbar snap-x snap-mandatory cursor-grab ">
         {fruits[1].map((item) => (
           <ItemCard key={item.name} item={item} />
         ))}
