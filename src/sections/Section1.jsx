@@ -30,13 +30,13 @@ export default function Section1() {
         {/* Button */}
         <button
           type="button"
-          className="bg-[var(--buttons)] p-3 pl-4 pr-4 ml-2 rounded-xl w-fit text-gray-200 font-semibold"
+          className="bg-[var(--buttons)] p-3 pl-4 pr-4 ml-2 rounded-xl w-fit text-gray-200 font-semibold transition-all hover:scale-110"
         >
           Order Now
         </button>
       </div>
       {/* Right Container */}
-      <div className="w-full lg:w-[50%] relative flex items-center z-[-1]">
+      <div className="w-full hidden lg:w-[50%] relative lg:flex items-center z-[-1]">
         {/* Background Image */}
         <img
           src="/bg.png"

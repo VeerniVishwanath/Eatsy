@@ -48,7 +48,7 @@ export default function Cart({ handleShow }) {
           </span>
         </div>
       ) : (
-        <div className=" bg-zinc-800 mt-8 h-full rounded-t-2xl">
+        <div className=" bg-zinc-800 mt-8 h-full rounded-t-2xl  overflow-y-auto no-scrollbar">
           {/* Cart List */}
           <div className="flex flex-col items-center gap-8 h-1/2 overflow-y-auto no-scrollbar py-8 px-4">
             {cartItems.map((item) => (
@@ -56,7 +56,7 @@ export default function Cart({ handleShow }) {
             ))}
           </div>
           {/* Bill */}
-          <div className="flex justify-center items-center h-1/2 bg-zinc-700 rounded-t-2xl">
+          <div className="flex justify-center items-center h-2/3 bg-zinc-700 rounded-t-2xl">
             <div className="flex flex-col gap-8 w-2/3 h-2/3">
               <p className="flex justify-between text-gray-400 text-xl font-medium">
                 Sub Total <span>₹ {subTotal}</span>
@@ -68,7 +68,7 @@ export default function Cart({ handleShow }) {
               <p className="flex justify-between text-2xl text-gray-200 font-bold">
                 Total <span>₹ {subTotal + DELIVERY_FEES}</span>
               </p>
-              <button className="bg-[var(--highlights)] h-12 rounded-full text-gray-200 font-medium text-xl transition-all hover:scale-105 ">
+              <button className="bg-[var(--highlights)] py-3 mb-8 rounded-full text-gray-200 font-medium text-xl transition-all hover:scale-105 ">
                 Proceed to Payment
               </button>
             </div>

@@ -3,7 +3,7 @@ import { DataContext } from "../../lib/Contexts";
 
 export default function ShowcaseCard() {
   return (
-    <div className="absolute top-0 left-0  w-full px-3 lg:pl-10 xl:pl-40 2xl:pl-80 h-full flex flex-wrap gap-8 justify-center items-center  ">
+    <div className="grid  lg:grid-cols-2 absolute lg:right-5 xl:right-10 gap-8">
       <Card category={2} />
       <Card category={3} />
       <Card category={5} />

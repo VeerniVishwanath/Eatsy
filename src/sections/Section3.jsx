@@ -21,9 +21,9 @@ export default function Section3() {
       <h2 className="text-2xl font-semibold">Our Hot Dishes</h2>
       <hr className="border-[2.5px] border-orange-500 rounded-sm w-24 mt-2" />
 
-      <div className="grid justify-items-center">
+      <div className="flex flex-col">
         {/* Carousel */}
-        <div className="flex w-full justify-center overflow-x-auto no-scrollbar gap-14 mt-8 p-4">
+        <div className="flex gap-14 lg:justify-center overflow-x-auto mt-8 p-4 no-scrollbar">
           {data.map((curr) => {
             return (
               <MenuCard

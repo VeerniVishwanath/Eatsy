@@ -22,31 +22,33 @@ export default function NavBar() {
       <div className="hover:cursor-pointer">
         <img src="logo.png" alt="" className="h-16" />
       </div>
-      <div className="flex items-center gap-8 text-gray-700 font-medium tracking-wide">
-        <button
-          type="button"
-          className="transition-transform hover:scale-110 hover:text-gray-800"
-        >
-          HOME
-        </button>
-        <button
-          type="button"
-          className="transition-transform hover:scale-110 hover:text-gray-800"
-        >
-          MENU
-        </button>
-        <button
-          type="button"
-          className="transition-transform hover:scale-110 hover:text-gray-800"
-        >
-          SERVICE
-        </button>
-        <button
-          type="button"
-          className="transition-transform hover:scale-110 hover:text-gray-800"
-        >
-          ABOUT
-        </button>
+      <div className="flex gap-8 items-center">
+        <div className="hidden lg:flex items-center gap-8 text-gray-700 font-medium tracking-wide">
+          <a
+            href=""
+            className="transition-transform hover:scale-110 hover:text-gray-800"
+          >
+            HOME
+          </a>
+          <a
+            href=""
+            className="transition-transform hover:scale-110 hover:text-gray-800"
+          >
+            MENU
+          </a>
+          <a
+            href=""
+            className="transition-transform hover:scale-110 hover:text-gray-800"
+          >
+            SERVICE
+          </a>
+          <a
+            href=""
+            className="transition-transform hover:scale-110 hover:text-gray-800"
+          >
+            ABOUT
+          </a>
+        </div>
         <button
           type="button"
           className="relative transition-transform hover:scale-110"
