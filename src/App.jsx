@@ -6,6 +6,7 @@ import NavBar from "./sections/NavBar.jsx";
 import Section1 from "./sections/Section1";
 import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
+import Footer from "./sections/Footer.jsx";
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -35,6 +36,7 @@ export default function App() {
           <Section1 />
           <Section2 />
           <Section3 />
+          <Footer />
         </DataContext.Provider>
       </CartProvider>
     </div>
