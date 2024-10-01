@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/Contexts";
 import AddToCart from "../AddToCart/AddToCart";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart({ handleShow }) {
   const [subTotal, setSubTotal] = useState(0);
@@ -18,6 +19,8 @@ export default function Cart({ handleShow }) {
     );
     setSubTotal(subTotal);
   }, [cartItems]);
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col justify-between fixed pt-8 pb-4 px-2 shadow-2xl bg-gray-100 top-0 left-0 sm:left-auto sm:right-0 h-dvh w-full sm:w-2/3 lg:w-1/2 xl:w-1/3">
@@ -68,7 +71,13 @@ export default function Cart({ handleShow }) {
               <p className="flex justify-between text-2xl text-gray-200 font-bold">
                 Total <span>₹ {subTotal + DELIVERY_FEES}</span>
               </p>
-              <button className="bg-[var(--highlights)] py-3 mb-8 rounded-full text-gray-200 font-medium text-xl transition-all hover:scale-105 ">
+              <button
+                onClick={() => {
+                  handleShow();
+                  navigate("checkout");
+                }}
+                className="bg-[var(--highlights)] py-3 mb-8 rounded-full text-gray-200 font-medium text-xl transition-all hover:scale-105 "
+              >
                 Proceed to Payment
               </button>
             </div>

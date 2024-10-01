@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import Cart from "../components/Cart/Cart";
 import { CartContext } from "../lib/Contexts";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const [show, setShow] = useState(false);
@@ -24,30 +25,30 @@ export default function NavBar() {
       </div>
       <div className="flex gap-8 items-center">
         <div className="hidden lg:flex items-center gap-8 text-gray-700 font-medium tracking-wide">
-          <a
-            href=""
+          <NavLink
+            to="/"
             className="transition-transform hover:scale-110 hover:text-gray-800"
           >
             HOME
-          </a>
-          <a
-            href=""
+          </NavLink>
+          <NavLink
+            to="/menu"
             className="transition-transform hover:scale-110 hover:text-gray-800"
           >
             MENU
-          </a>
-          <a
-            href=""
+          </NavLink>
+          <NavLink
+            to="/service"
             className="transition-transform hover:scale-110 hover:text-gray-800"
           >
             SERVICE
-          </a>
-          <a
-            href=""
+          </NavLink>
+          <NavLink
+            to="about"
             className="transition-transform hover:scale-110 hover:text-gray-800"
           >
             ABOUT
-          </a>
+          </NavLink>
         </div>
         <button
           type="button"

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../lib/Contexts";
 import ItemCard from "../components/ItemCard/ItemCard";
+import { useLoaderData } from "react-router-dom";
 
 export default function Section3() {
   const [category, setCategory] = useState("chicken");
-  const data = useContext(DataContext);
+  const data = useContext(DataContext) || useLoaderData();
+
   if (!data) {
     return <div>Menu Not Found...</div>;
   }
