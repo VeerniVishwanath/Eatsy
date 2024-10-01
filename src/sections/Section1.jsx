@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import ShowcaseCard from "../components/ShowcaseCard/ShowcaseCard";
-import { CartContext } from "../lib/Contexts";
+import { useNavigate } from "react-router-dom";
 
 export default function Section1() {
+  const navigate = useNavigate();
+
   return (
     <section className="flex flex-col lg:flex-row gap-20 lg:gap-4 pt-32 ">
       {/* Left Container */}
@@ -30,6 +32,7 @@ export default function Section1() {
         {/* Button */}
         <button
           type="button"
+          onClick={() => navigate("menu")}
           className="bg-[var(--buttons)] p-3 pl-4 pr-4 ml-2 rounded-xl w-fit text-gray-200 font-semibold transition-all hover:scale-110"
         >
           Order Now

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import Cart from "../components/Cart/Cart";
 import { CartContext } from "../lib/Contexts";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function NavBar() {
   const [show, setShow] = useState(false);
@@ -18,9 +18,11 @@ export default function NavBar() {
     setTotal(totalItems);
   }, [cartItems]);
 
+  const navigate = useNavigate();
+
   return (
     <div className="flex z-50 justify-between h-auto px-8 py-4 fixed top-0 left-0 right-0 bg-[var(--background-color)]">
-      <div className="hover:cursor-pointer">
+      <div className="hover:cursor-pointer" onClick={() => navigate("/")}>
         <img src="logo.png" alt="" className="h-16" />
       </div>
       <div className="flex gap-8 items-center">
