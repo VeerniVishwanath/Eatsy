@@ -3,11 +3,13 @@ import { useState } from "react";
 import Cart from "../components/Cart/Cart";
 import { CartContext } from "../lib/Contexts";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
   const [show, setShow] = useState(false);
   const [total, setTotal] = useState(0);
-  const { cartItems } = useContext(CartContext);
+  // const { cartItems } = useContext(CartContext);
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const handleShow = () => {
     setShow(!show);

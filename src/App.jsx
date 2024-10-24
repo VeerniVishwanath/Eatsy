@@ -8,6 +8,8 @@ import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
 import Footer from "./sections/Footer.jsx";
 import { Outlet, useLoaderData } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./lib/store.js";
 
 export async function loader() {
   const database = getDatabase(config);
@@ -37,7 +39,7 @@ export default function App() {
 
   return (
     <div className="p-4 md:px-16">
-      <CartProvider>
+      <Provider store={store}>
         <DataContext.Provider value={data}>
           <NavBar />
           {location.pathname === "/" ? (
@@ -51,11 +53,12 @@ export default function App() {
           )}
           <Footer />
         </DataContext.Provider>
-      </CartProvider>
+      </Provider>
     </div>
   );
 }
 
+/**  Code For Cart using ContextAPI
 function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
@@ -81,4 +84,6 @@ function CartProvider({ children }) {
       {children}
     </CartContext.Provider>
   );
+
 }
+*/

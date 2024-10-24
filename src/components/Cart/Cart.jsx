@@ -2,14 +2,19 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/Contexts";
 import AddToCart from "../AddToCart/AddToCart";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../../lib/cartSlice";
 
 export default function Cart({ handleShow }) {
   const [subTotal, setSubTotal] = useState(0);
-  const { cartItems, clearCart } = useContext(CartContext);
+  // const { cartItems, clearCart } = useContext(CartContext);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+
   const DELIVERY_FEES = 50;
 
   const handleClear = () => {
-    clearCart();
+    dispatch(clearCart());
   };
 
   useEffect(() => {

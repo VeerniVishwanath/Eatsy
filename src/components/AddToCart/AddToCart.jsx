@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/Contexts";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../lib/cartSlice";
 
 export default function AddToCart({ item }) {
   const [count, setCount] = useState(item.count || 0);
-  const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
-
+  // const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+  console.log(cartItems);
   useEffect(() => {
     const cartItem = cartItems.find((currItem) => currItem.name === item.name);
     setCount(cartItem ? cartItem.count : 0);
@@ -17,9 +21,9 @@ export default function AddToCart({ item }) {
     setCount(newCount);
 
     if (op === "-" && newCount === 0) {
-      removeFromCart(item.name);
+      dispatch(removeFromCart(item.name));
     } else {
-      addToCart({ ...item, count: newCount });
+      dispatch(addToCart({ ...item, count: newCount }));
     }
   };
   return (
