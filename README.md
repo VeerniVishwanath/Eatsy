@@ -7,7 +7,7 @@ Live at [here](https://eatsy-pi.vercel.app/)
 ## Technologies used
 
 **Framework** : ReactJS \
-**CSS framework** : Tailwind
+**CSS framework** : Tailwind \
 **State Management**: Redux
 
 ## Preview
